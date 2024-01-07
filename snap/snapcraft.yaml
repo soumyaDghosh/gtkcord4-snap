@@ -8,6 +8,7 @@ confinement: strict
 
 architectures:
   - build-for: amd64
+  - build-for: arm64
 
 parts:
   gtkcord4:
