@@ -6,6 +6,9 @@ summary: GTK4 Discord client in Go
 grade: stable
 confinement: strict
 
+architectures:
+  - build-for: amd64
+
 parts:
   gtkcord4:
     plugin: nil
