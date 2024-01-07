@@ -1,0 +1,31 @@
+name: gtkcord4 
+base: core22 
+version: '0.0.16-1'
+description: GTK4 Discord client in Go
+summary: GTK4 Discord client in Go
+grade: stable
+confinement: strict
+
+parts:
+  gtkcord4:
+    plugin: nil
+    build-packages:
+      - zstd
+      - axel
+    override-pull: |
+      axel https://github.com/diamondburned/gtkcord4/releases/download/v${SNAPCRAFT_PROJECT_VERSION}/gtkcord4-linux-amd64-v${SNAPCRAFT_PROJECT_VERSION}-.tar.zst -o gtkcord4.tar.zst
+      mkdir gtkcord4
+      tar --use-compress-program=unzstd -xvf gtkcord4.tar.zst -C gtkcord4
+      cd gtkcord4
+      sed -i 's|Icon=gtkcord4|Icon=${SNAP}/share/icons/256x256/apps/gtkcord4.svg|g' share/applications/so.libdb.gtkcord4.desktop
+      cp -r * $CRAFT_PART_INSTALL/
+
+apps:
+  gtkcord4:
+    command: bin/gtkcord4
+    desktop: share/applications/so.libdb.gtkcord4.desktop
+    extensions:
+      - gnome
+    plugs:
+      - network
+      - home
