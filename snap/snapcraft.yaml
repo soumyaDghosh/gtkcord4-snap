@@ -33,3 +33,5 @@ apps:
     plugs:
       - network
       - home
+      - audio-playback
+      - password-manager-service
