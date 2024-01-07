@@ -17,7 +17,7 @@ parts:
       - zstd
       - axel
     override-pull: |
-      axel https://github.com/diamondburned/gtkcord4/releases/download/v${SNAPCRAFT_PROJECT_VERSION}/gtkcord4-linux-${CRAFT_TARGET_ARCH_BUILD_FOR}-v${SNAPCRAFT_PROJECT_VERSION}-.tar.zst -o gtkcord4.tar.zst
+      axel https://github.com/diamondburned/gtkcord4/releases/download/v${SNAPCRAFT_PROJECT_VERSION}/gtkcord4-linux-${CRAFT_ARCH_BUILD_ON}-v${SNAPCRAFT_PROJECT_VERSION}-.tar.zst -o gtkcord4.tar.zst
       mkdir gtkcord4
       tar --use-compress-program=unzstd -xvf gtkcord4.tar.zst -C gtkcord4
       cd gtkcord4
