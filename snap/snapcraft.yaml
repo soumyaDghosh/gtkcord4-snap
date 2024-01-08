@@ -21,7 +21,7 @@ parts:
       mkdir gtkcord4
       tar --use-compress-program=unzstd -xvf gtkcord4.tar.zst -C gtkcord4
       cd gtkcord4
-      sed -i 's|Icon=gtkcord4|Icon=${SNAP}/share/icons/256x256/apps/gtkcord4.svg|g' share/applications/so.libdb.gtkcord4.desktop
+      sed -i 's|Icon=gtkcord4|Icon=${SNAP}/share/icons/hicolor/256x256/apps/gtkcord4.svg|g' share/applications/so.libdb.gtkcord4.desktop
       cp -r * $CRAFT_PART_INSTALL/
 
 apps:
